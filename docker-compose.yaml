@@ -4,9 +4,9 @@ services:
     ports:
       - "3000:3000"
     restart: unless-stopped
-    POSTGRES:_HOST: localhost
+    POSTGRES_HOST: localhost
     POSTGRES_PORT: 5432
-    REDIS-HOST: localhost
+    REDIS_HOST: localhost
     REDIS_HOST: 6379
 
   db:
