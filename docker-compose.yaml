@@ -4,6 +4,10 @@ services:
     ports:
       - "3000:3000"
     restart: unless-stopped
+    POSTGRES:_HOST: localhost
+    POSTGRES_PORT: 5432
+    REDIS-HOST: localhost
+    REDIS_HOST: 6379
 
   db:
     image: postgres:15.13-alpine3.21
@@ -12,3 +16,8 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: "mysecretpassword"
+  redis:
+    image: redis:7.2.8-alpine3.21
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
